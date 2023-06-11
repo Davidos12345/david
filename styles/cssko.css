@@ -1,0 +1,338 @@
+:root {
+    --white: #F1F6F9;
+    --dark_blue: #394867;
+    --black: #212A3E;
+    --gray: #9BA4B5;
+    --blue_button: #47A992;
+    --def_font-size: 1rem;
+}
+
+* {
+    font-family: sans-serif !important;
+    box-sizing: border-box;
+    font-size: var(--def_font-size);
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, span, div, ul, ol, li, a {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+.menu {
+    position: relative;
+    width: 100%;
+    height: 3.75rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2.5rem;
+    color: var(--white);
+    background: var(--black);
+}
+
+.menulist {
+    display: flex;
+    list-style: none;
+    color: var(--white);
+    gap: 1rem;
+}
+
+.hlavninabydka {
+    display: none;
+}
+
+.hlavninabydka button {
+    border: none;
+    background: transparent;
+    color: var(--white);
+}
+
+.menulist li {
+    position: relative;
+    cursor: pointer;
+}
+
+.menulist li:before {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 0;
+    bottom: 0;
+    border-radius: 1px;
+    background: var(--white);
+    transition: all .15s ease-in-out;
+}
+
+.menulist li:hover:before {
+    width: 100%;
+}
+
+.active:after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    border-radius: 1px;
+    background: var(--white);
+}
+
+.menulist li a {
+    color: var(--white);
+    user-select: none;
+}
+
+.clanky {
+    min-height: 95%;
+    width: 75%;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main.window {
+    width: 80%;
+    height: fit-content;
+    padding: 12px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    column-gap: 35px;
+    row-gap: 45px;
+}
+
+.clanek {
+    display: flex;
+    gap: 15px;
+    height: fit-content;
+}
+
+.clanek.foto {
+    max-width: 300px;
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: #000 no-repeat center;
+    background-size: cover;
+}
+
+.text {
+    width: 418px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
+
+.text p {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.text a {
+    align-self: flex-end;
+    color: var(--black);
+    text-decoration: none;
+}
+
+.clanek.zahlavi {
+    font-size: 1.15rem;
+    font-weight: 500;
+}
+
+.moreSpace {
+    width: 100%;
+}
+
+.konec {
+    background: #212A3E;
+    width: 100%;
+    padding: 1.25rem 0.25rem;
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    flex-flow: column;
+}
+
+.konec.content {
+    display: flex;
+    flex-flow: row wrap;
+    width: 60%;
+    gap: 100px;
+}
+
+.konec.content .cont {
+    flex: 1;
+}
+
+.konec.content .cont ul {
+    list-style: none;
+}
+
+.form_input_wrap {
+    display: flex;
+    flex-flow: column;
+    flex: 1;
+}
+
+.form_input_wrap input {
+    padding: 4px 10px;
+}
+
+.button_sub {
+    width: fit-content;
+    padding: 0.5rem 1.25rem;
+    border-radius: 8px;
+    border: none;
+    background: var(--blue_button);
+    color: var(--white);
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+tr, td {
+    border: 1px solid var(--black);
+    padding: 0.25rem 1rem;
+}
+
+.clanky.clanek {
+    margin-top: 4rem;
+    justify-content: flex-start;
+    gap: 2rem;
+    width: 800px;
+    align-self: center;
+    margin-bottom: 8rem;
+    min-height: 0;
+}
+
+.profil.foto {
+    width: 48px;
+    height: 48px;
+    border-radius: 32px;
+    background: #212A3E;
+}
+
+.open {
+    display: flex !important;
+}
+
+.contactForm {
+    width: 50%;
+}
+
+select {
+    padding: 4px 10px;
+    background: transparent;
+    border: 1px solid var(--gray);
+    border-radius: 1px;
+}
+
+@media (max-width: 728px) {
+    .main.window {
+        display: flex;
+        flex-flow: column;
+    }
+
+    .clanek {
+        flex-flow: column;
+        align-items: center;
+    }
+
+    .text {
+        width: 100%;
+    }
+
+    .clanek.zahlavi {
+        align-items: flex-start;
+    }
+
+    .clanek.foto {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .clanky.over {
+        width: 85%;
+        min-height: 85%
+    }
+
+    .menulist {
+        border-top: 1px solid var(--gray);
+        position: absolute;
+        flex-flow: column;
+        width: 100%;
+        padding: 1rem 1.5rem;
+        left: 0;
+        top: 3.75rem;
+        display: none;
+        background: var(--black);
+    }
+
+    .menulist li {
+        padding: 5px;
+    }
+
+    .menulist li a {
+        display: block;
+        width: 100%;
+    }
+
+    .about:active {
+        position: static !important;
+    }
+
+    .menulist_submenu {
+        display: none !important;
+    }
+
+    .menu_list_submenu li {
+        padding: 5px;
+    }
+
+    .hlavninabydka {
+        display: flex;
+    }
+
+    .clanky.clanek {
+        width: 90%;
+    }
+
+    .konec.content {
+        display: flex;
+        align-items: flex-start;
+        flex-flow: column wrap;
+        width: 80%;
+        gap: 20px;
+    }
+
+    .clanky.over {
+        width: 100%
+    }
+
+    .contactForm {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1224px) {
+    .clanky {
+        width: 95%;
+    }
+
+    .clanky.over {
+        min-height: 85%
+    }
+}
+
